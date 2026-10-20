@@ -1,0 +1,4 @@
+---
+import Base from '../../layouts/Base.astro'; import PageHero from '../../components/PageHero.astro'; import {programsEn} from '../../data/site.js';
+---
+<Base title="Our programs | EFD" description="Integrated areas of work for lasting impact" lang="en"><PageHero title="Our programs" subtitle="Integrated areas of work for lasting impact" lang="en"/><section class="section alt"><div class="container"><div class="grid g3">{programsEn.map((x,i)=><article class="card"><div class="card-body"><div class="icon">{x.icon}</div><h3>{x.title}</h3><p>{x.desc}</p><a class="link" href={'/en/programs/program-'+(i+1)}>Program details →</a></div></article>)}</div></div></section></Base>
