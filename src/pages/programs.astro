@@ -1,0 +1,4 @@
+---
+import Base from '../layouts/Base.astro'; import PageHero from '../components/PageHero.astro'; import {programsAr} from '../data/site.js';
+---
+<Base title="برامجنا | EFD" description="مجالات عمل متكاملة لتحقيق أثر مستدام" lang="ar"><PageHero title="برامجنا" subtitle="مجالات عمل متكاملة لتحقيق أثر مستدام" lang="ar"/><section class="section alt"><div class="container"><div class="grid g3">{programsAr.map((x,i)=><article class="card"><div class="card-body"><div class="icon">{x.icon}</div><h3>{x.title}</h3><p>{x.desc}</p><a class="link" href={'/programs/program-'+(i+1)}>تفاصيل البرنامج ←</a></div></article>)}</div></div></section></Base>
