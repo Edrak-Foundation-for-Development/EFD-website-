@@ -1,0 +1,7 @@
+---
+const {lang='ar', path='/'}=Astro.props; const ar=lang==='ar'; const prefix=ar?'':'/en';
+const items=ar?[['الرئيسية','/'],['من نحن','/about'],['برامجنا','/programs'],['مشاريعنا','/projects'],['الأخبار','/news'],['قصص النجاح','/stories'],['الفرص','/opportunities'],['اتصل بنا','/contact']]:[['Home','/en/'],['About','/en/about'],['Programs','/en/programs'],['Projects','/en/projects'],['News','/en/news'],['Stories','/en/stories'],['Opportunities','/en/opportunities'],['Contact','/en/contact']];
+const switchUrl=ar?('/en'+(path==='/'?'':path)):(path.replace(/^\/en/,'')||'/');
+---
+<div class="topbar"><div class="container"><div class="toplinks"><span>✉ info@efd-ye.org</span><span>☎ أضف رقم المؤسسة</span></div><div class="toplinks"><a href="/complaints">{ar?'الشكاوى والملاحظات':'Feedback & complaints'}</a><span>● ● ●</span></div></div></div>
+<header class="header"><nav class="container nav"><a class="brand" href={prefix||'/'}><span class="mark">EFD</span><span class="brandtext"><strong>{ar?'مؤسسة إدراك للتنمية':'Edrak Foundation for Development'}</strong><small>{ar?'تنمية يقودها المجتمع':'Community-led development'}</small></span></a><div class="menu" id="mainMenu">{items.map(([n,u])=><a href={u}>{n}</a>)}</div><div class="nav-actions"><a class="lang" href={switchUrl}>{ar?'EN':'عربي'}</a><button class="menu-btn" aria-label="Menu" onclick="document.getElementById('mainMenu')?.classList.toggle('open')">☰</button></div></nav></header>
