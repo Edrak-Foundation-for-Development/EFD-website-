@@ -1,0 +1,4 @@
+---
+const {title,subtitle='',lang='ar'}=Astro.props; const ar=lang==='ar';
+---
+<section class="page-hero"><div class="container"><div class="breadcrumb">{ar?'الرئيسية':'Home'} / {title}</div><h1>{title}</h1>{subtitle&&<p>{subtitle}</p>}</div></section>
