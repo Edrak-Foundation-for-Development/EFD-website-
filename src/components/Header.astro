@@ -1,7 +1,45 @@
 ---
-const {lang='ar', path='/'}=Astro.props; const ar=lang==='ar'; const prefix=ar?'':'/en';
-const items=ar?[['الرئيسية','/'],['من نحن','/about'],['برامجنا','/programs'],['مشاريعنا','/projects'],['الأخبار','/news'],['قصص النجاح','/stories'],['الفرص','/opportunities'],['اتصل بنا','/contact']]:[['Home','/en/'],['About','/en/about'],['Programs','/en/programs'],['Projects','/en/projects'],['News','/en/news'],['Stories','/en/stories'],['Opportunities','/en/opportunities'],['Contact','/en/contact']];
-const switchUrl=ar?('/en'+(path==='/'?'':path)):(path.replace(/^\/en/,'')||'/');
+import { site } from '../data/site.js';
+const { lang = 'ar', path = '/' } = Astro.props;
+const ar = lang === 'ar';
+const prefix = ar ? '' : '/en';
+const items = ar
+  ? [['الرئيسية', '/'], ['من نحن', '/about'], ['برامجنا', '/programs'], ['مشاريعنا', '/projects'], ['الأخبار', '/news'], ['قصص النجاح', '/stories'], ['اتصل بنا', '/contact']]
+  : [['Home', '/'], ['About us', '/about'], ['Programs', '/programs'], ['Projects', '/projects'], ['News', '/news'], ['Success stories', '/stories'], ['Contact us', '/contact']];
+const switchUrl = ar ? (`/en${path === '/' ? '' : path}`) : (path.replace(/^\/en/, '') || '/');
+const brandAlt = ar ? site.nameAr : site.nameEn;
 ---
-<div class="topbar"><div class="container"><div class="toplinks"><span>✉ info@efd-ye.org</span><span>☎ أضف رقم المؤسسة</span></div><div class="toplinks"><a href="/complaints">{ar?'الشكاوى والملاحظات':'Feedback & complaints'}</a><span>● ● ●</span></div></div></div>
-<header class="header"><nav class="container nav"><a class="brand" href={prefix||'/'}><span class="mark">EFD</span><span class="brandtext"><strong>{ar?'مؤسسة إدراك للتنمية':'Edrak Foundation for Development'}</strong><small>{ar?'تنمية يقودها المجتمع':'Community-led development'}</small></span></a><div class="menu" id="mainMenu">{items.map(([n,u])=><a href={u}>{n}</a>)}</div><div class="nav-actions"><a class="lang" href={switchUrl}>{ar?'EN':'عربي'}</a><button class="menu-btn" aria-label="Menu" onclick="document.getElementById('mainMenu')?.classList.toggle('open')">☰</button></div></nav></header>
+<div class="topbar">
+  <div class="container">
+    <div class="toplinks">
+      <a href={`mailto:${site.email}`} aria-label={ar ? 'البريد الإلكتروني' : 'Email'}>✉ {site.email}</a>
+      <a href={site.phoneHref} aria-label={ar ? 'رقم الهاتف' : 'Phone number'}>☎ {site.phone}</a>
+    </div>
+    <div class="toplinks">
+      <a href="/complaints">{ar ? 'الشكاوى' : 'Complaints'}</a>
+      <a href={switchUrl} class="lang-switch">{ar ? 'English' : 'العربية'}</a>
+      <a href={site.facebook} target="_blank" rel="noopener noreferrer" aria-label={ar ? site.facebookLabelAr : site.facebookLabelEn} class="social-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M13.5 22v-8h2.7l.4-3.1h-3.1V7.2c0-.9.3-1.5 1.7-1.5H17V2.8c-.3 0-1.3-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.6H7.5V14h2.5v8h3.5Z" fill="currentColor"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <nav class="container nav">
+    <a class="brand" href={prefix || '/'} aria-label={brandAlt}>
+      <img src={site.logo} alt={brandAlt} class="site-logo" />
+      <span class="brandtext"><strong>{ar ? site.nameAr : site.nameEn}</strong></span>
+    </a>
+    <div class="menu">
+      {items.map(([label, href]) => (
+        <a href={href} class={path === href ? 'active' : ''}>{label}</a>
+      ))}
+    </div>
+    <button class="menu-toggle" type="button" aria-label={ar ? 'فتح القائمة' : 'Open menu'}>
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>

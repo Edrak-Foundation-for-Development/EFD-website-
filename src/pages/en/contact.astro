@@ -1,4 +1,42 @@
 ---
-import Base from '../../layouts/Base.astro'; import PageHero from '../../components/PageHero.astro';
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import { site } from '../../data/site.js';
 ---
-<Base title="Contact us | EFD" description="Contact EFD" lang="en"><PageHero title="Contact us" subtitle="We welcome your message and partnership" lang="en"/><section class="section"><div class="container grid g2"><div class="contact-box"><h2>Contact details</h2><p><strong>Email:</strong> info@efd-ye.org</p><p><strong>Phone:</strong> Add official number</p><p><strong>Address:</strong> Add official address</p><div class="map">Google Map placeholder</div></div><form class="form"><h2>Send a message</h2><input placeholder="Full name"/><input type="email" placeholder="Email"/><input placeholder="Subject"/><textarea placeholder="Write your message"></textarea><button type="button" class="btn">Send message</button></form></div></section></Base>
+<Base title="Contact us | EFD" description="Contact Edrak Foundation for Development" lang="en">
+  <PageHero title="Contact us" subtitle="We welcome your message and partnership" lang="en" />
+  <section class="section">
+    <div class="container contact-layout">
+      <div class="contact-card">
+        <h3>Contact information</h3>
+        <ul class="contact-list">
+          <li>
+            <strong>Phone:</strong>
+            <a href={site.phoneHref}>{site.phone}</a>
+          </li>
+          <li>
+            <strong>Address:</strong>
+            <span>{site.addressEn}</span>
+          </li>
+          <li>
+            <strong>Email:</strong>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </li>
+          <li>
+            <strong>Facebook:</strong>
+            <a href={site.facebook} target="_blank" rel="noopener noreferrer">Edrak Foundation for Development</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact-card">
+        <h3>Let’s collaborate</h3>
+        <p>We welcome inquiries, partnership opportunities, community initiatives, and field support. Reach out to explore ways to work together for sustainable development.</p>
+        <div class="cta-row">
+          <a href={`mailto:${site.email}`} class="primary-btn">Email us</a>
+          <a href={site.facebook} target="_blank" rel="noopener noreferrer" class="secondary-btn">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

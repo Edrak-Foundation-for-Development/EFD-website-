@@ -1,4 +1,39 @@
 ---
-const {lang='ar'}=Astro.props; const ar=lang==='ar'; const p=ar?'':'/en';
+import { site } from '../data/site.js';
+const { lang = 'ar' } = Astro.props;
+const ar = lang === 'ar';
+const p = ar ? '' : '/en';
 ---
-<footer class="footer"><div class="container"><div class="footer-grid"><div><div class="brand"><span class="mark">EFD</span><span class="brandtext"><strong style="color:white">{ar?'مؤسسة إدراك للتنمية':'Edrak Foundation for Development'}</strong></span></div><p>{ar?'منظمة مجتمع مدني تعمل على دعم المجتمعات وتعزيز التنمية المستدامة والقدرة على الصمود. هذا النص تجريبي ويستبدل بالنص المؤسسي المعتمد.':'A civil society organization supporting communities, sustainable development and resilience. Replace with approved institutional text.'}</p></div><div><h3>{ar?'روابط سريعة':'Quick links'}</h3><a href={p+'/about'}>{ar?'من نحن':'About us'}</a><a href={p+'/projects'}>{ar?'المشاريع':'Projects'}</a><a href={p+'/news'}>{ar?'الأخبار':'News'}</a><a href={p+'/contact'}>{ar?'اتصل بنا':'Contact'}</a></div><div><h3>{ar?'شارك معنا':'Engage'}</h3><a href={p+'/opportunities'}>{ar?'الوظائف':'Careers'}</a><a href={p+'/opportunities'}>{ar?'المناقصات':'Tenders'}</a><a href={p+'/volunteer'}>{ar?'التطوع':'Volunteer'}</a><a href={p+'/complaints'}>{ar?'الشكاوى':'Complaints'}</a></div><div><h3>{ar?'تواصل':'Contact'}</h3><p>info@efd-ye.org</p><p>{ar?'أدخل العنوان الرسمي هنا':'Add official address here'}</p><p>Facebook · LinkedIn · YouTube</p></div></div><div class="copyright"><span>© 2026 {ar?'مؤسسة إدراك للتنمية':'Edrak Foundation for Development'}</span><span>{ar?'جميع الحقوق محفوظة':'All rights reserved'}</span></div></div></footer>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <img src={site.logo} alt={ar ? site.nameAr : site.nameEn} class="site-logo" />
+          <span class="brandtext"><strong style="color:white">{ar ? site.nameAr : site.nameEn}</strong></span>
+        </div>
+        <p>{ar ? 'نبني شراكات متميزة لدعم المجتمعات وتعزيز التنمية المستدامة.' : 'We build meaningful partnerships to support communities and sustainable development.'}</p>
+      </div>
+
+      <div>
+        <h4>{ar ? 'معلومات التواصل' : 'Contact information'}</h4>
+        <ul class="contact-list">
+          <li><a href={site.phoneHref}>{site.phone}</a></li>
+          <li><span>{ar ? site.addressAr : site.addressEn}</span></li>
+          <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>{ar ? 'تابعنا' : 'Follow us'}</h4>
+        <div class="social-links">
+          <a href={site.facebook} target="_blank" rel="noopener noreferrer" aria-label={ar ? site.facebookLabelAr : site.facebookLabelEn} class="social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M13.5 22v-8h2.7l.4-3.1h-3.1V7.2c0-.9.3-1.5 1.7-1.5H17V2.8c-.3 0-1.3-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.6H7.5V14h2.5v8h3.5Z" fill="currentColor"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

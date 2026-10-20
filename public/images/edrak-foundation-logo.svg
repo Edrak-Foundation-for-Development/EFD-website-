@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Edrak Foundation logo</title>
+  <desc id="desc">A circular green badge with an open book, leaf motif and Arabic branding.</desc>
+  <defs>
+    <linearGradient id="ring" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d6c51"/>
+      <stop offset="100%" stop-color="#0a4f3e"/>
+    </linearGradient>
+    <linearGradient id="book" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#f4d990"/>
+      <stop offset="100%" stop-color="#dba832"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#2ebd63"/>
+      <stop offset="100%" stop-color="#0f7d47"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="#020b09"/>
+  <g transform="translate(50 50)">
+    <circle cx="400" cy="400" r="390" fill="url(#ring)"/>
+    <circle cx="400" cy="400" r="320" fill="#eef3f0"/>
+    <circle cx="400" cy="400" r="300" fill="none" stroke="#e6f0ec" stroke-width="10" stroke-dasharray="2 18"/>
+    <g opacity="0.95" stroke="#0d6c51" stroke-width="16" stroke-linecap="round" fill="none">
+      <path d="M165 248c-22 72-14 129 18 167"/>
+      <path d="M160 276c-36 48-45 90-26 139"/>
+      <path d="M735 248c22 72 14 129-18 167"/>
+      <path d="M740 276c36 48 45 90 26 139"/>
+    </g>
+
+    <g transform="translate(0 24)">
+      <g transform="translate(80 75)">
+        <ellipse cx="95" cy="135" rx="70" ry="76" fill="#0d6c51"/>
+        <circle cx="95" cy="70" r="36" fill="#0d6c51"/>
+        <path d="M95 88 L78 220 L110 220 Z" fill="#0d6c51"/>
+      </g>
+      <g transform="translate(586 150)">
+        <ellipse cx="131" cy="122" rx="76" ry="70" fill="#0d6c51"/>
+        <circle cx="131" cy="60" r="38" fill="#0d6c51"/>
+        <path d="M131 79 L146 220 L116 220 Z" fill="#0d6c51"/>
+      </g>
+
+      <g transform="translate(0 0)">
+        <path d="M492 130 C536 128, 580 158, 600 212 C566 196, 532 196, 490 216 Z" fill="url(#leaf)"/>
+        <path d="M495 146 C522 170, 544 214, 546 262 C514 252, 476 233, 466 192 Z" fill="url(#leaf)"/>
+        <path d="M316 120 C272 118, 228 148, 208 202 C242 186, 276 186, 318 206 Z" fill="url(#leaf)"/>
+        <path d="M312 136 C284 160, 262 208, 260 256 C294 246, 332 227, 342 186 Z" fill="url(#leaf)"/>
+      </g>
+
+      <g transform="translate(210 104)">
+        <path d="M76 210 C94 116, 104 72, 160 34 C188 10, 218 8, 260 18 C215 82, 197 132, 184 272 Z" fill="url(#leaf)"/>
+        <path d="M126 214 C148 164, 176 138, 212 120 C238 106, 270 100, 314 102 C294 156, 284 212, 274 300 Z" fill="url(#leaf)"/>
+        <path d="M176 128 C164 82, 140 50, 106 38 C90 62, 82 104, 88 148 Z" fill="#1d8f4f" opacity="0.8"/>
+        <path d="M244 140 C258 108, 282 86, 328 82 C330 120, 312 154, 282 186 Z" fill="#1d8f4f" opacity="0.8"/>
+      </g>
+
+      <g transform="translate(174 180)">
+        <path d="M120 171 C150 150, 196 164, 223 200 L213 246 L98 246 L74 188 Z" fill="#0d6c51"/>
+        <path d="M252 171 C282 150, 328 164, 355 200 L345 246 L230 246 L206 188 Z" fill="#0d6c51"/>
+      </g>
+
+      <g transform="translate(280 175)">
+        <path d="M115 34 L145 34 C217 34, 302 122, 302 196 L302 216 L260 216 L260 196 C260 151, 215 102, 145 102 L115 102 Z" fill="#0b5d46"/>
+        <path d="M307 52 L340 52 L400 273 L365 273 Z" fill="#0a4e3b"/>
+        <path d="M253 175 L425 175 L425 220 L253 220 Z" fill="#145b42"/>
+        <path d="M272 145 L303 145 L302 516 L272 516 Z" fill="#1d4d39"/>
+        <path d="M0 0 L95 0 L95 146 L0 146 Z" fill="#f4d990" opacity="0.92"/>
+        <path d="M95 0 L187 0 L187 146 L95 146 Z" fill="#f0d38a" opacity="0.98"/>
+        <path d="M187 0 L277 0 L277 146 L187 146 Z" fill="#f4d990" opacity="0.94"/>
+        <path d="M277 0 L350 0 L350 146 L277 146 Z" fill="#f0d38a" opacity="0.96"/>
+        <path d="M100 50 L540 50 L540 95 L100 95 Z" fill="#f4d990" opacity="0.9"/>
+        <path d="M0 146 L350 146 L350 210 L0 210 Z" fill="#f4d990" opacity="0.92"/>
+      </g>
+
+      <g font-family="Cairo, Arial, sans-serif" font-weight="700" text-anchor="middle" fill="#f5c64e">
+        <text x="398" y="332" font-size="162">E</text>
+        <text x="560" y="332" font-size="162">D</text>
+      </g>
+
+      <g transform="translate(100 430)">
+        <path d="M0 0 C118 32, 213 58, 402 56 C171 102, 108 110, 0 120 Z" fill="#0d6c51" opacity="0.96"/>
+      </g>
+
+      <g font-family="Cairo, Arial, sans-serif" font-weight="700" text-anchor="middle" fill="#0d2a24">
+        <text x="440" y="620" font-size="82">مؤسسة إدراك</text>
+      </g>
+    </g>
+  </g>
+</svg>

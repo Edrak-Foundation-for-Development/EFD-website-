@@ -1,4 +1,26 @@
 ---
-import Base from '../layouts/Base.astro'; import PageHero from '../components/PageHero.astro'; 
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { site } from '../data/site.js';
 ---
-<Base title="من نحن | EFD" description="نبني حلولًا تنموية بالشراكة مع المجتمعات" lang="ar"><PageHero title="من نحن" subtitle="نبني حلولًا تنموية بالشراكة مع المجتمعات" lang="ar"/><section class="section"><div class="container split"><div class="content"><span class="kicker">مؤسسة إدراك للتنمية</span><h2>منظمة قريبة من المجتمع</h2><p class="lead">هذا نص مؤسسي تجريبي. تعمل المؤسسة على دعم التنمية المستدامة وتمكين المجتمعات وتعزيز قدرتها على الصمود.</p><h2>رؤيتنا</h2><p>مجتمعات قادرة ومزدهرة تقود تنميتها بفاعلية.</p><h2>رسالتنا</h2><p>تصميم وتنفيذ مبادرات تنموية بالشراكة مع المجتمعات والجهات الفاعلة.</p></div><div class="visual"><img src="/images/cover-1.svg" alt=""/></div></div></section><section class="section alt"><div class="container"><div class="section-head center"><h2>قيمنا</h2></div><div class="grid g4"><div class="card"><div class="card-body"><h3>الإنسانية</h3></div></div><div class="card"><div class="card-body"><h3>النزاهة</h3></div></div><div class="card"><div class="card-body"><h3>المساءلة</h3></div></div><div class="card"><div class="card-body"><h3>الشراكة</h3></div></div></div></div></section></Base>
+<Base title="من نحن | EFD" description="نبني حلولًا تنموية بالشراكة مع المجتمعات" lang="ar">
+  <PageHero title="من نحن" subtitle="نبني حلولًا تنموية بالشراكة مع المجتمعات" lang="ar" />
+  <section class="section">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>معلومات المؤسسة</h3>
+          <p>مؤسسة إدراك للتنمية مؤسسة محلية تعمل على دعم المجتمعات والجهود التنموية في اليمن عبر الشراكات والبرامج الموجهة نحو التمكين والرفاه.</p>
+        </div>
+        <div class="info-card">
+          <h3>التواصل</h3>
+          <ul class="contact-list compact">
+            <li><strong>الهاتف:</strong> <a href={site.phoneHref}>{site.phone}</a></li>
+            <li><strong>العنوان:</strong> <span>{site.addressAr}</span></li>
+            <li><strong>الفيسبوك:</strong> <a href={site.facebook} target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

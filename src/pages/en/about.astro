@@ -1,4 +1,26 @@
 ---
-import Base from '../../layouts/Base.astro'; import PageHero from '../../components/PageHero.astro'; 
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import { site } from '../../data/site.js';
 ---
-<Base title="About us | EFD" description="We build development solutions with communities" lang="en"><PageHero title="About us" subtitle="We build development solutions with communities" lang="en"/><section class="section"><div class="container split"><div class="content"><span class="kicker">Edrak Foundation for Development</span><h2>A community-centered organization</h2><p class="lead">This is sample institutional copy. EFD supports sustainable development, community empowerment and resilience.</p><h2>Our vision</h2><p>Capable, thriving communities leading their own development.</p><h2>Our mission</h2><p>Designing and delivering development initiatives with communities and stakeholders.</p></div><div class="visual"><img src="/images/cover-1.svg" alt=""/></div></div></section><section class="section alt"><div class="container"><div class="section-head center"><h2>Our values</h2></div><div class="grid g4"><div class="card"><div class="card-body"><h3>Humanity</h3></div></div><div class="card"><div class="card-body"><h3>Integrity</h3></div></div><div class="card"><div class="card-body"><h3>Accountability</h3></div></div><div class="card"><div class="card-body"><h3>Partnership</h3></div></div></div></div></section></Base>
+<Base title="About us | EFD" description="We build development solutions with communities" lang="en">
+  <PageHero title="About us" subtitle="We build development solutions with communities" lang="en" />
+  <section class="section">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Our organization</h3>
+          <p>Edrak Foundation for Development is a local organization that supports communities and development efforts in Yemen through partnerships and programs focused on empowerment and well-being.</p>
+        </div>
+        <div class="info-card">
+          <h3>Contact</h3>
+          <ul class="contact-list compact">
+            <li><strong>Phone:</strong> <a href={site.phoneHref}>{site.phone}</a></li>
+            <li><strong>Address:</strong> <span>{site.addressEn}</span></li>
+            <li><strong>Facebook:</strong> <a href={site.facebook} target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
